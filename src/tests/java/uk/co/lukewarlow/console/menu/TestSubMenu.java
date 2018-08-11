@@ -10,7 +10,7 @@ public final class TestSubMenu extends AbstractMenu
     @Override
     protected void init()
     {
-        addMenuItem(new MenuItem(0, "Exit current menu", () -> {}).isExitOption());
+        addMenuItem(new MenuItem(0, "Exit current menu", () -> {}).setAsExitOption());
         addMenuItem(new MenuItem(1, "Test sub menu item", () -> System.out.println("Test sub menu item selected")));
     }
 }

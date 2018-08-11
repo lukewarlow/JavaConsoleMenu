@@ -12,8 +12,8 @@ public final class TestMenu extends AbstractMenu
     @Override
     protected void init()
     {
-        addMenuItem(new MenuItem(0, "Exit menu", () -> {}).isExitOption());
-        addMenuItem(new MenuItem(1, "Test submenu item", new TestSubMenu()));
+        addMenuItem(new MenuItem(0, "Exit menu", () -> {}).setAsExitOption());
+        addMenuItem(new MenuItem(1, "Test submenu", new TestSubMenu()));
 
         addMenuItem(new MenuItem(2, "Show hidden menu item", () ->
         {
