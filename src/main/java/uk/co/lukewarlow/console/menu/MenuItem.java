@@ -128,7 +128,7 @@ public class MenuItem
     /**
      * Make the menu item exit the current menu.
      */
-    public final MenuItem isExitOption()
+    public final MenuItem setAsExitOption()
     {
         isExitOption = true;
         return this;

@@ -1,6 +1,7 @@
 package uk.co.lukewarlow.console.menu;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -63,11 +64,21 @@ public abstract class AbstractMenu
                 var item = Integer.parseInt(input);
                 var menuItem = menuItems.get(item);
                 if (menuItem.isVisible()) repeat = menuItem.run();
-                else throw new IndexOutOfBoundsException();
+                else throw new InputMismatchException();
             }
-            catch (NumberFormatException | IndexOutOfBoundsException e)
+            catch (NumberFormatException e)
             {
-                System.out.println("Invalid option.");
+                System.out.println("Invalid option, you need to enter a number.");
+                repeat = true;
+            }
+            catch (IndexOutOfBoundsException e)
+            {
+                System.out.println("Invalid option. Option " + input + " doesn't exist.");
+                repeat = true;
+            }
+            catch (InputMismatchException e)
+            {
+                System.out.println("Invalid option. Option at " + input + " is hidden.");
                 repeat = true;
             }
         }
@@ -82,6 +93,7 @@ public abstract class AbstractMenu
     public final void addMenuItem(final MenuItem menuItem)
     {
         if (!menuItems.contains(menuItem)) menuItems.add(menuItem);
+        else throw new IllegalArgumentException("Menu item with id " + menuItem.getID() + " already exists!");
     }
 
     /**
