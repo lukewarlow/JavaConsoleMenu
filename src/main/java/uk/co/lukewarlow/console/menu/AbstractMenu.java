@@ -119,9 +119,9 @@ public abstract class AbstractMenu
             var menuItem = new MenuItem(itemId);
             menuItems.get(menuItems.indexOf(menuItem)).show();
         }
-        catch (Exception e)
+        catch (IndexOutOfBoundsException e)
         {
-            System.err.println("Error showing menu item: " + e);
+            throw new IllegalArgumentException("Error showing menu item. Menu item with ID " + itemId + " hasn't been added to this menu.");
         }
     }
 
@@ -137,9 +137,9 @@ public abstract class AbstractMenu
             var menuItem = new MenuItem(itemId);
             menuItems.get(menuItems.indexOf(menuItem)).hide();
         }
-        catch (Exception e)
+        catch (IndexOutOfBoundsException e)
         {
-            System.err.println("Error showing menu item: " + e);
+            throw new IllegalArgumentException("Error hiding menu item. Menu item with ID " + itemId + " hasn't been added to this menu.");
         }
     }
 }
