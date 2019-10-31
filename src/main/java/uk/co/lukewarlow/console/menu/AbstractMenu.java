@@ -20,8 +20,10 @@ public abstract class AbstractMenu
     private List<MenuItem> menuItems;
 
     /**
+     *
      * AbstractMenu constructor.
      *
+     * @param title The title of the menu that is printed to the console.
      */
     protected AbstractMenu(String title)
     {

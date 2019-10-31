@@ -45,7 +45,7 @@ public class MenuItem
     }
 
     /**
-     * Constructor for menu item, if it is an action
+     * Constructor for menu item, if it is an action.
      *
      * @param id The unique (per menu) id for the item.
      * @param description The description for the item.
@@ -118,6 +118,8 @@ public class MenuItem
 
     /**
      * Shows menu item.
+     *
+     * @return the current instance of the MenuItem.
      */
     public final MenuItem show()
     {
@@ -127,6 +129,8 @@ public class MenuItem
 
     /**
      * Make the menu item exit the current menu.
+     *
+     * @return the current instance of the MenuItem.
      */
     public final MenuItem setAsExitOption()
     {

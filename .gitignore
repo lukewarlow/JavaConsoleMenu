@@ -1,7 +1,8 @@
 
-# Created by https://www.gitignore.io/api/java,macos,linux,windows,intellij,gradle
+# Created by https://www.gitignore.io/api/java,linux,macos,gradle,windows,intellij+all
+# Edit at https://www.gitignore.io/?templates=java,linux,macos,gradle,windows,intellij+all
 
-### Intellij ###
+### Intellij+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
@@ -11,6 +12,9 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+
+# Generated files
+.idea/**/contentModel.xml
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
@@ -29,9 +33,11 @@
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
-# .idea/modules.xml
-# .idea/*.iml
-# .idea/modules
+.idea/modules.xml
+.idea/*.iml
+.idea/modules
+*.iml
+*.ipr
 
 # CMake
 cmake-build-*/
@@ -63,13 +69,19 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
-### Intellij Patch ###
-# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
+# Android studio 3.1+ serialized cache file
+.idea/caches/build_file_checksums.ser
 
-# *.iml
-# modules.xml
-# .idea/misc.xml
-# *.ipr
+### Intellij+all Patch ###
+# Ignores the whole .idea folder and all .iml files
+# See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
+
+.idea/
+
+# Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
+
+modules.xml
+.idea/misc.xml
 
 # Sonarlint plugin
 .idea/sonarlint
@@ -145,6 +157,7 @@ Temporary Items
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
+Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
 
@@ -169,7 +182,7 @@ $RECYCLE.BIN/
 
 ### Gradle ###
 .gradle
-/build/
+build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -183,5 +196,9 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
+### Gradle Patch ###
+**/build/
 
-# End of https://www.gitignore.io/api/java,macos,linux,windows,intellij,gradle
+gradle.properties
+
+# End of https://www.gitignore.io/api/java,linux,macos,gradle,windows,intellij+all
